@@ -14,13 +14,16 @@
   --ligthColor: #fff;
   --footer-bg: rgba(255, 154, 108, 0.25);
 }
+html {
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  scroll-behavior: smooth;
+}
 
 body {
   color: var(--darkColor);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 header {
@@ -44,6 +47,13 @@ header .menu a {
   text-decoration: none;
 }
 
+h1,
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
 #inicio {
   display: flex;
   align-items: center;
@@ -52,19 +62,19 @@ header .menu a {
   position: relative;
 }
 
-h1,
-h2 {
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 32px;
-}
-
 .paragrafo {
   line-height: 150%;
   margin-bottom: 32px;
 }
 
-.btn {
+.btns {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 30px;
+}
+
+.btns .btn {
   background-color: var(--primaryColor);
   border-radius: 8px;
   padding: 16px 32px;
@@ -72,15 +82,14 @@ h2 {
   text-decoration: none;
 }
 
-.btn-transparent {
-  background-color: transparent;
+.btns .btn-transparent {
   color: var(--primaryColor);
-  padding: 16px 32px;
   text-underline-offset: 4px;
   transition: color .1s linear;
+  font-weight: 600;
 }
 
-.btn-transparent:hover {
+.btns .btn-transparent:hover {
   color: var(--secondaryColor);
 }
 
@@ -132,7 +141,7 @@ h2 {
   border: 2px solid var(--primaryColor);
   border-radius: 8px;
   cursor: pointer;
-  padding: 24px;
+  padding: 24px 40px 24px 24px;
 }
 
 #duvidas .duvida img {
@@ -227,5 +236,65 @@ footer p a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.openNav {
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--ligthColor);
+  display: none;
+}
+
+.mySidenavContainer {
+    width: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: end;
+    transition: 0.5s;
+    overflow-x: hidden;
+  }
+  
+.sidenav {
+  height: 100%; 
+  width: 200px;
+  background-color: rgba(253, 138, 85, 0.9); 
+  padding-top: 100px; 
+  display: flex;
+  flex-direction: column;
+}
+.sidenav a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--ligthColor);
+  transition: 0.3s;
+  margin: 0 0 30px 20px;
+  width: fit-content;
+}
+
+.sidenav a:hover {
+  color: var(--darkColor);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
   }
 }
