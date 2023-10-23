@@ -42,7 +42,7 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Feito com ♥ by Lucas Mendes :wave: 
+Made with ♥ by Lucas Mendes :wave: 
 
 Caso queira sua própria página web para o seu tipo de negócio Entre em contato comigo via [Email](mailto:lucasms.540@gmail.com)
 ou
